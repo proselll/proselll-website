@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proselll</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts - 手書き風フォント -->
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- カスタム CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-900 text-white font-mono overflow-x-hidden">
+
+<!-- カスタムカーソル -->
+<div class="cursor"></div>
+
+<!-- 固定ヘッダー -->
+<header class="fixed top-0 left-0 w-full bg-gray-800/90 backdrop-blur-md z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+    <!-- ロゴ -->
+    <div class="text-2xl font-bold text-orange-500 relative logo-morph">
+      Proselll
+      <!-- SVG流体アンダーライン -->
+      <svg class="absolute bottom-0 left-0 w-full h-2" viewBox="0 0 100 8" preserveAspectRatio="none">
+        <path id="logoUnderline" d="M0,4 Q25,2 50,4 T100,4" stroke="#FFA500" stroke-width="2" fill="none" />
+      </svg>
+    </div>
+
+    <!-- PCメニュー -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="menu-link">ホーム</a>
+      <a href="#about" class="menu-link">私たちについて</a>
+      <a href="#services" class="menu-link">サービス内容</a>
+      <a href="#vision" class="menu-link">ビジョン</a>
+      <a href="#contact" class="menu-link">お問い合わせ</a>
+    </nav>
+
+    <!-- ハンバーガー -->
+    <div class="md:hidden">
+      <button id="hamburger" class="focus:outline-none text-orange-500 hover:text-white transition-colors hamburger-morph">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- モバイルメニュー -->
+  <nav id="mobileMenu" class="hidden flex-col space-y-2 px-4 pb-4 md:hidden bg-gray-700/95 mobile-menu-slide">
+    <a href="#home" class="menu-link py-2 block">ホーム</a>
+    <a href="#about" class="menu-link py-2 block">私たちについて</a>
+    <a href="#services" class="menu-link py-2 block">サービス内容</a>
+    <a href="#vision" class="menu-link py-2 block">ビジョン</a>
+    <a href="#contact" class="menu-link py-2 block">お問い合わせ</a>
+  </nav>
+</header>
+
+  <!-- メインセクション -->
+  <main class="pt-16">
+
+    <!-- ホームセクション -->
+    <section id="home" class="relative flex items-center justify-center section-morphing">
+      <div class="relative z-10 text-center px-4">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold typing liquid-text" id="mainTitle">
+          人間関係を豊かにする、新時代のIT企業へ
+        </h1>
+        <div class="mt-8">
+          <svg class="mx-auto w-64 h-2" viewBox="0 0 256 8" preserveAspectRatio="none">
+            <path id="titleUnderline" d="M0,4 Q64,2 128,4 T256,4" stroke="#FFA500" stroke-width="3" fill="none" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 私たちについて -->
+    <section id="about" class="flex flex-col items-center justify-center bg-gray-850 px-4 py-12 section-morphing">
+      <h2 class="text-4xl font-bold mb-8 text-center morph-title">私たちについて</h2>
+
+      <div class="max-w-4xl w-full space-y-6">
+        <!-- 会社概要 -->
+        <div class="space-y-2 text-center info-cards">
+        <div class="info-card">
+            <p class="liquid-item">代表：清水優人</p>
+        </div>
+                  <div class="info-card">
+            <p class="liquid-item">設立：2022年</p>
+          </div>
+          <div class="info-card">
+            <p class="liquid-item">拠点：神戸・大阪・東京</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- セクション区切りのSVGライン -->
+      <div class="mt-12 w-full flex justify-center">
+        <svg class="w-64 h-2" viewBox="0 0 256 8" preserveAspectRatio="none">
+          <path id="sectionDivider1" d="M0,4 Q64,6 128,4 T256,4" stroke="#FFA500" stroke-width="2" fill="none" opacity="0.6" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- サービス内容 -->
+    <section id="services" class="flex flex-col items-center justify-center bg-gray-900 px-4 py-12 section-morphing">
+      <h2 class="text-4xl font-bold mb-6 morph-title">サービス内容</h2>
+      
+      <div class="services-list">
+        <!-- システム導入サポート -->
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24">
+            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4zM6.5 10.5L4 8l8-8 2.5 2.5-8 8z"/>
+          </svg>
+          <div class="service-content">
+            <h3>経営システム導入</h3>
+            <p>中小企業向けの経営システム導入をサポートします。「技術重視」でなく「経営重視」で本質的な機能を、提供します。</p>
+          </div>
+        </div>
+
+        <!-- 業務効率化 -->
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          <div class="service-content">
+            <h3>業務効率化</h3>
+            <p>煩雑な業務の効率化と導入コストの削減を図り、生産性向上をサポート。本当に必要な業務に集中できます。</p>
+          </div>
+        </div>
+
+        <!-- DX化サポート -->
+        <div class="service-item">
+          <svg class="service-icon" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+          </svg>
+          <div class="service-content">
+            <h3>人間中心のDX化</h3>
+            <p>コミュニケーションを残したDX化を実現し、人と人とのつながりを大切にしながらデジタル変革を推進します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ビジョン -->
+    <section id="vision" class="flex flex-col items-center justify-center bg-gray-850 px-4 py-12 section-morphing">
+      <h2 class="text-4xl font-bold mb-8 text-center morph-title">ビジョン</h2>
+      <div class="max-w-4xl text-center space-y-6 vision-container">
+        <div class="vision-paragraph">
+          <p class="liquid-item">現代社会においてデジタルによる問題が2つあります。一つはデジタル化が進んでいないこと、もう一つがデジタル化が進みすぎていることです。特に日本では企業へのデジタルの導入が遅れており、必要でない非効率が発生しています。一方で、日常生活をデジタルが侵食しており、スマホ依存などの問題は深刻になっています。</p>
+        </div>
+
+        <div class="vision-paragraph">
+          <p class="liquid-item">私たちは、誰もがデジタルの恩恵を受けつつ、人間関係の本質を守ることを目指しています。重要なのは適切なバランスです。車もアクセルだけでは安全運転ができないのと同じように、ITも効率化だけに走らず、人のつながりを尊重することが大切です。</p>
+        </div>
+
+        <div class="vision-paragraph">
+          <p class="liquid-item">技術革新は雇用を奪うものではなく、置き換えによって新たな価値を生み出します。私たちは、人間にしかできない価値ある仕事への転換をサポートし、従業員のスキルや可能性を最大化します。</p>
+        </div>
+
+        <div class="vision-paragraph">
+          <p class="liquid-item">これらの取り組みを通じて、地域の中小企業の発展を促し、地域経済全体の底上げに貢献します。デジタル化の恩恵を受けながら、人間関係という仕事の本質を守ること。それが私たちProselllのビジョンです。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact" class="flex flex-col items-center justify-center bg-gray-900 px-4 py-12 section-morphing">
+      <h2 class="text-4xl font-bold mb-6 morph-title">お問い合わせ</h2>
+      <p class="mb-4 liquid-item">ご相談はお気軽にどうぞ。</p>
+      <a href="mailto:yutoshimizu0113@gmail.com" class="button liquid-button">メールで問い合わせ</a>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-gray-800 text-gray-400 py-6 mt-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+      <p class="liquid-item">© 2025 Proselll All Rights Reserved</p>
+      <div class="space-x-4 mt-2 md:mt-0 social-links">
+        <a href="#" class="hover:text-orange-500 social-morph"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-orange-500 social-morph"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="hover:text-orange-500 social-morph"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- カスタム JS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

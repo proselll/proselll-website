@@ -1,0 +1,386 @@
+/* カスタムマウスカーソル */
+body {
+    cursor: none;
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #FFA500;
+    clip-path: polygon(0% 0%, 0% 80%, 25% 65%, 35% 100%, 50% 90%, 25% 55%, 100% 55%, 0% 0%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-2px, -2px);
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.4);
+}
+
+.cursor.hover {
+    transform: translate(-2px, -2px) scale(1.1);
+}
+
+/* モバイルではカーソルを非表示 */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+
+    .cursor {
+        display: none;
+    }
+}
+
+/* フルスクリーン設定 */
+html,
+body {
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    height: 100vh;
+    position: relative;
+}
+
+main {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* 流体アニメーション基本クラス */
+.liquid-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    transform-origin: center;
+}
+
+.liquid-item {
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.liquid-item:hover {
+    transform: scale(1.02) translateY(-2px);
+}
+
+/* セクションモーフィング */
+.section-morphing {
+    transition: background-color 0.6s ease;
+}
+
+/* ロゴ（アニメーション削除） */
+.logo-morph {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.logo-morph:hover {
+    transform: scale(1.05);
+}
+
+/* タイトルモーフィング */
+.morph-title {
+    transform-origin: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 情報カードの流体アニメーション */
+.info-cards .info-card {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 127, 0, 0.05));
+    border-radius: 12px;
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+.info-cards .info-card:hover {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 127, 0, 0.1));
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.1);
+}
+
+/* サービスアイコン付きリスト */
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.08), rgba(255, 127, 0, 0.04));
+    border-radius: 16px;
+    border: 1px solid rgba(255, 165, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.15), rgba(255, 127, 0, 0.08));
+    box-shadow: 0 15px 40px rgba(255, 165, 0, 0.15);
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    fill: #FFA500;
+    flex-shrink: 0;
+}
+
+.service-content {
+    flex: 1;
+}
+
+.service-content h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFA500;
+    margin-bottom: 0.5rem;
+}
+
+.service-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #D1D5DB;
+}
+
+/* 手書き風署名 */
+.signature {
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    font-family: 'Kalam', cursive;
+    font-size: 1.8rem;
+    color: #FFA500;
+    opacity: 0.8;
+    transform: rotate(-5deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ビジョンセクション */
+.vision-container {
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.06), rgba(255, 127, 0, 0.03));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 165, 0, 0.12);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    max-width: 4xl;
+    margin: 0 auto;
+}
+
+.vision-container:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.12), rgba(255, 127, 0, 0.06));
+    box-shadow: 0 20px 50px rgba(255, 165, 0, 0.12);
+}
+
+.vision-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #E5E7EB;
+}
+
+/* 流体ボタン */
+.liquid-button {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: 2px solid #FFA500;
+    background: linear-gradient(135deg, transparent, rgba(255, 165, 0, 0.1));
+    color: #FFA500;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.liquid-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #FFA500;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: -1;
+}
+
+.liquid-button:hover::before {
+    width: 300%;
+    height: 300%;
+}
+
+.liquid-button:hover {
+    color: #1F2937;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 165, 0, 0.3);
+}
+
+/* ハンバーガーメニューモーフィング */
+.hamburger-morph {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hamburger-morph:hover {
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* モバイルメニュー流体スライド */
+.mobile-menu-slide {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu-slide:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* メニューリンクの流体アニメーション */
+.menu-link {
+    position: relative;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #FF7F00, #FFA500, #FF7F00);
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 2px;
+}
+
+.menu-link:hover {
+    color: #FFA500;
+    transform: translateY(-2px);
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* ソーシャルリンクモーフィング */
+.social-morph {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+}
+
+.social-morph:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+/* タイピングアニメーション */
+.typing {
+    border-right: 2px solid #FFA500;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        border-color: #FFA500;
+    }
+
+    51%,
+    100% {
+        border-color: transparent;
+    }
+}
+
+/* SVGアニメーション用 */
+#logoUnderline,
+#titleUnderline,
+#sectionDivider1 {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+    .liquid-text {
+        font-size: 2rem;
+        line-height: 1.2;
+        white-space: normal;
+        word-break: break-word;
+        padding: 0 1rem;
+    }
+
+    .vision-container {
+        padding: 1.5rem;
+    }
+
+    .info-cards .info-card {
+        padding: 0.8rem;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .service-item {
+        padding: 1.2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .signature {
+        font-size: 1.4rem;
+        bottom: -5px;
+        right: 15px;
+    }
+
+    /* モバイルメニューを縦に配置 */
+    #mobileMenu {
+        flex-direction: column;
+    }
+
+    #mobileMenu .menu-link {
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 165, 0, 0.1);
+    }
+
+    #mobileMenu .menu-link:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .liquid-text {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    section {
+        padding: 0 1rem;
+    }
+}
