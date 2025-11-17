@@ -20,8 +20,8 @@ if (!isMobile) {
         const dx = mouseX - cursorX;
         const dy = mouseY - cursorY;
 
-        cursorX += dx * 0.2;
-        cursorY += dy * 0.2;
+        cursorX += dx;
+        cursorY += dy;
 
         cursor.style.left = cursorX + 'px';
         cursor.style.top = cursorY + 'px';
